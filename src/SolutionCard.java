@@ -13,7 +13,8 @@ public class SolutionCard
     {
         Path sciezka = Paths.get(fileName);
         List<String> readList = new ArrayList<String>();
-        Student temporaryStudent = new Student();
+        String name = "Fuck";
+        List<String> temporaryExam = new ArrayList<String>();
         try
         {
             readList = (ArrayList) Files.readAllLines(sciezka);
@@ -30,12 +31,13 @@ public class SolutionCard
             {
                 if(i==0)
                 {
-                    temporaryStudent.setName(l[i]);
+                    name = l[i];
                 }
                 else
-                temporaryStudent.addSolution(l[i]);
+                    temporaryExam.add(l[i]);
             }
-            studentsList.add(temporaryStudent);
+            studentsList.add(new Student(name,temporaryExam));
+            temporaryExam = new ArrayList<String>();
         }
     }
     public List<Student> getStudentsList()
@@ -49,5 +51,10 @@ public class SolutionCard
         {
             System.out.println(studentsList.get(i).name);
         }
+    }
+
+    public Student getStudent(int i)
+    {
+        return studentsList.get(i);
     }
 }

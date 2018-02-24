@@ -9,10 +9,15 @@ public class Main
         SolutionCard ans = new SolutionCard();
         ans.readKeyCard("dane.csv");
         test.readFromXmlFile("pytania.xml");
+        Statistics st = new Statistics();
 
+        st.examine(test.rightAnswer,ans.studentsList,2);
 
-        ans.print();
-        System.out.println(ans.getStudentsList().get(0).getSolution(1));
+        for(int i = 0;i<ans.studentsList.size();i++)
+        {
+            System.out.println(ans.getStudent(i).name + " Punktów: "+ ans.studentsList.get(i).getPoints()+"\n Ocena: "+ ans.studentsList.get(i).getMark()+"\n Procenty: "+ ans.studentsList.get(i).getPercent() );
+            //System.out.println(ans.getStudent(i).getSolutionsList().get(0)+" "+ans.getStudent(i).getSolutionsList().get(1));
+        }
     }
 
 }

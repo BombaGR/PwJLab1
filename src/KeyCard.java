@@ -78,4 +78,13 @@ public class KeyCard
         }
     }
 
+    public List<String> getRightAnswer()
+    {
+        return rightAnswer;
+    }
+
+    public List<String> getQuestion()
+    {
+        return question;
+    }
 }
