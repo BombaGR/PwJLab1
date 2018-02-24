@@ -7,12 +7,13 @@ import java.util.List;
 
 public class SolutionCard
 {
-    List<String> keyList = new ArrayList<String>();
+    List<Student> studentsList = new ArrayList<Student>();
 
     public void readKeyCard(String fileName)
     {
         Path sciezka = Paths.get(fileName);
         List<String> readList = new ArrayList<String>();
+        Student temporaryStudent = new Student();
         try
         {
             readList = (ArrayList) Files.readAllLines(sciezka);
@@ -25,20 +26,28 @@ public class SolutionCard
         for(String line : readList)
         {
             String [] l = line.split(",");
-            keyList.add(l[0]);
-            keyList.add(l[1]);
+            for(int i=0;i<l.length;i++)
+            {
+                if(i==0)
+                {
+                    temporaryStudent.setName(l[i]);
+                }
+                else
+                temporaryStudent.addSolution(l[i]);
+            }
+            studentsList.add(temporaryStudent);
         }
     }
-    public List<String> getKeyList()
+    public List<Student> getStudentsList()
     {
-        return keyList;
+        return studentsList;
     }
 
     public void print()
     {
-        for(int i = 0; i<keyList.size();i++)
+        for(int i = 0; i<studentsList.size();i++)
         {
-            System.out.println(keyList.get(i));
+            System.out.println(studentsList.get(i).name);
         }
     }
 }

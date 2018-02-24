@@ -9,19 +9,10 @@ public class Main
         SolutionCard ans = new SolutionCard();
         ans.readKeyCard("dane.csv");
         test.readFromXmlFile("pytania.xml");
-        List<String> odp = ans.getKeyList();
 
-        if(odp.get(1).equals(test.rightAnswer.get(0)))
-        {
-            System.out.println("Prawidlowo!");
-        }
-        else
-            System.out.println("Nie!");
-        /*for (int i =0;i<2;i++) {
-            System.out.println(test.question.get(i));
-            System.out.println(test.answers.get(i));
-            System.out.println(test.rightAnswer.get(i));
-        }*/
+
+        ans.print();
+        System.out.println(ans.getStudentsList().get(0).getSolution(1));
     }
 
 }

@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-public class KeyCard {
-=======
+
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -80,5 +78,4 @@ public class KeyCard
         }
     }
 
->>>>>>> dfc792ec7323143e020ad4d460b3da7b225906b8
 }
