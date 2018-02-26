@@ -20,4 +20,14 @@
         </odpowiedzi>
         <prawidlowa>a. sd</prawidlowa>
     </pytanie>
+    <pytanie id = "3">
+        <tresc>Kto wygrał?</tresc>
+        <odpowiedzi>
+            <A>a. Tony Stark</A>
+            <B>b. asssd Bell</B>
+            <C>c. Thomsadasd Edissson</C>
+            <D>d. Nissad Tesla</D>
+        </odpowiedzi>
+        <prawidlowa>a. Tony Stark</prawidlowa>
+    </pytanie>
 </test>

@@ -5,10 +5,17 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Klasa reprezentuje odpowiedzi udzielone przez studentów.
+ */
 public class SolutionCard
 {
-    List<Student> studentsList = new ArrayList<Student>();
+    private List<Student> studentsList = new ArrayList<Student>();
 
+    /**
+     * Metoda wczytuje odpowiedzi udzielone przez studenta z pliku .csv.
+     * @param fileName String
+     */
     public void readKeyCard(String fileName)
     {
         Path sciezka = Paths.get(fileName);
@@ -40,19 +47,32 @@ public class SolutionCard
             temporaryExam = new ArrayList<String>();
         }
     }
+
+    /**
+     * Metoda zwraca listę obiktów klasy student.
+     * @return ArrayList
+     */
     public List<Student> getStudentsList()
     {
         return studentsList;
     }
 
+    /**
+     * Metoda wyświetla studentów.
+     */
     public void print()
     {
         for(int i = 0; i<studentsList.size();i++)
         {
-            System.out.println(studentsList.get(i).name);
+            System.out.println(studentsList.get(i).getName());
         }
     }
 
+    /**
+     * Metoda wyświetla studenta o podanym indeksie.
+     * @param i int
+     * @return Student
+     */
     public Student getStudent(int i)
     {
         return studentsList.get(i);

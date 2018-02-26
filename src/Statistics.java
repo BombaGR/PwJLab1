@@ -1,14 +1,23 @@
 import java.util.List;
 
+/**
+ * Klasa odpowiedzialna za sprawdzanie odpowiedzi udzielonych przez studentów z wczytanym kluczem.
+ */
 public class Statistics
 {
+    /**
+     * Metoda dokonuje sprawdzenia pracy studenta. Wystawia ocene, podaje wynik punktowy i procentowy.
+     * @param rightAnswer
+     * @param studentsList
+     * @param maxPoints
+     */
     public void examine(List<String> rightAnswer, List<Student> studentsList, int maxPoints )
     {
         for(int i =0;i<studentsList.size();i++)
         {
             for(int j =0;j<rightAnswer.size();j++)
             {
-                if(rightAnswer.get(j).equals(studentsList.get(i).solutionsList.get(j)))
+                if(rightAnswer.get(j).equals(studentsList.get(i).getSolution(j)))
                 {
                     studentsList.get(i).addPoint();
                 }
@@ -45,8 +54,4 @@ public class Statistics
         }
     }
 
-    public void getResoults(int maxPoints, List<Student> studentList)
-    {
-
-    }
 }

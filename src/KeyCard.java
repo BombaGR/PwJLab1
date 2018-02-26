@@ -1,11 +1,8 @@
-
-
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -13,12 +10,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Klasa odpowiedzialna za wczytywanie oraz przechowywanie testów.
+ */
 public class KeyCard
 {
-    public List<String> question;
-    public List<String> answers;
-    public List<String> rightAnswer;
+    private List<String> question;
+    private List<String> answers;
+    private List<String> rightAnswer;
 
+    /**
+     * konstruktor klasy.
+     */
     public KeyCard()
     {
         question = new ArrayList<String>();
@@ -26,6 +29,10 @@ public class KeyCard
         rightAnswer = new ArrayList<String>();
     }
 
+    /**
+     * Metoda wczytuje test który zapisany jest w formacie XML.
+     * @param xmlFileName nazwa pliku XML do wczytania.
+     */
     public void readFromXmlFile(String xmlFileName)
     {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -78,13 +85,29 @@ public class KeyCard
         }
     }
 
+    /**
+     * Metoda zwracająca listę poprawnych odpowiedzi.
+     * @return ArrayList
+     */
     public List<String> getRightAnswer()
     {
         return rightAnswer;
     }
 
+    /**
+     * Metoda zwraca listę pytań.
+     * @return ArrayList
+     */
     public List<String> getQuestion()
     {
         return question;
+    }
+
+    /**
+     * Metoda zwaraca Liste z odpowiedziami z testu.
+     * @return ArrayList
+     */
+    public List<String> getAnswers() {
+        return answers;
     }
 }
